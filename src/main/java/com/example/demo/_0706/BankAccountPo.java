@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo._0706;
 
 public class BankAccountPo { //main 자동완성
     static int balance = 0;  //예금잔액

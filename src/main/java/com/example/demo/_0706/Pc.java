@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo._0706;
 class PcControl{   //클래스
     public static void main(String[] args) {
         Pc aPc = new Pc("Macbook");

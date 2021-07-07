@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo._0706;
 
 public class BankAccount {  //메소드생성 리터럴값
     int balance = 0; //은행계좌만들기
@@ -17,7 +17,7 @@ public class BankAccount {  //메소드생성 리터럴값
     }
 }
 
-class BankAccountOO{
+class BankAccountObjectOrientVersion{
     public static void main(String[] args) {
         BankAccount seo = new BankAccount();
         BankAccount su = new BankAccount();
