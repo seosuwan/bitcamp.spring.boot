@@ -1,4 +1,4 @@
-package com.example.demo._0706;
+package com.example.demo._pratice;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 

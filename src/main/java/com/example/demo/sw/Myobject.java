@@ -1,6 +1,5 @@
-package com.example.demo._0706;
+package com.example.demo.sw;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Myobject {

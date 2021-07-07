@@ -1,4 +1,4 @@
-package com.example.demo._0706;
+package com.example.demo._pratice;
 
 import sun.management.snmp.jvmmib.JVM_MANAGEMENT_MIBOidTable;
 

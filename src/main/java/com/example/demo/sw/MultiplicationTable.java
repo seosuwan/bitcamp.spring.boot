@@ -1,4 +1,4 @@
-package com.example.demo._0706;
+package com.example.demo.sw;
 
 public class MultiplicationTable<MultiplicationTableTest> {
     public static void main(String[] args) {
