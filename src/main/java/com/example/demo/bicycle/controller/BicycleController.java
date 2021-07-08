@@ -13,7 +13,7 @@ public class BicycleController {
         System.out.println("이 바이크 회사는");
         aa.setCompany(bc.next());
         System.out.println("스피드는");
-        aa.setSpeed(bc.nextInt());
+        aa.setSpeed(bc.nextInt());  //-> setSpeed 인스턴스 변수가 되었다
         System.out.println("기어는 총");
         aa.setGear(bc.nextInt());
 

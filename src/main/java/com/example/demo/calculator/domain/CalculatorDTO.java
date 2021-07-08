@@ -1,6 +1,6 @@
-package com.example.demo.sum.domain;
+package com.example.demo.calculator.domain;
 
-public class Sum {
+public class CalculatorDTO {
     private int num;
     private int num2;
     private String opcode;
@@ -31,6 +31,6 @@ public class Sum {
 
     @Override
     public String toString() {
-        return String.format("%d + %d = %d", num, num2,num + num2);
+        return String.format("%d %s %d = ", num ,opcode, num2);
     }
 }

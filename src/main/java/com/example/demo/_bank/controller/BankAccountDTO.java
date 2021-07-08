@@ -4,7 +4,7 @@ import com.example.demo._bank.domain.BankAccount;
 
 import java.util.Scanner;
 
-public class BankAccountPocontroller {
+public class BankAccountDTO {
     public  static  void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         BankAccount bankaccount = new BankAccount();

@@ -1,14 +1,14 @@
 package com.example.demo.dog.controller;
 
-import com.example.demo.dog.domain.Dog;
+import com.example.demo.dog.domain.DogDTO;
 
 import java.util.Scanner;
 
 //state(name, color, breed, hugry) and behavior (barking, fetching,wagging tail)
-public class DogCorntroller {
+public class DogController {
     public static void main(String[] args) {  //
         Scanner sc = new Scanner(System.in);
-        Dog dog = new Dog();
+        DogDTO dog = new DogDTO();
 
         System.out.println("내 이름은");
         dog.setName(sc.next());

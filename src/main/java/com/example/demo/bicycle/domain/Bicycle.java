@@ -1,7 +1,7 @@
 package com.example.demo.bicycle.domain;
 
 public class Bicycle {
-    private String company;
+    private String company;  //멤버변수가 메인으로 가면 인스턴스 변수
     private int gear;
     private int speed;
 
