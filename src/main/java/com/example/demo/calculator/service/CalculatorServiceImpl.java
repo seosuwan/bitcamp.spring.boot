@@ -29,4 +29,21 @@ public class CalculatorServiceImpl implements CalculatorService{
     public int remain(CalculatorDTO calculator) {
         return calculator.getNum() % calculator.getNum2();
     }
+
+    @Override
+    public int[] sequence(CalculatorDTO calculator) {
+        int count = calculator.getNum2() - calculator.getNum() + 1;
+        int[] arr = new int[count];
+        int i = 0;
+        for(int j=calculator.getNum();j <=calculator.getNum2();j++){
+            arr[i] = j;
+            i++;
+        }
+        return arr;
+    }
+
 }
+
+
+
+

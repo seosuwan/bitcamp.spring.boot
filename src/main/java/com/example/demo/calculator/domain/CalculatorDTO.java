@@ -1,6 +1,6 @@
 package com.example.demo.calculator.domain;
 
-public class CalculatorDTO {
+public class CalculatorDTO { //속성
     private int num;
     private int num2;
     private String opcode;
@@ -31,6 +31,6 @@ public class CalculatorDTO {
 
     @Override
     public String toString() {
-        return String.format("%d %s %d = ", num ,opcode, num2);
+    return String.format("%d %s %d = ", num ,opcode, num2);
     }
 }
