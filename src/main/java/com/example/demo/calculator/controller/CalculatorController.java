@@ -20,7 +20,7 @@ public class CalculatorController {
         calculator.setNum2(scanner.nextInt());
         //System.out.println("+");
         int result = 0;
-        switch (calculator.getopcode()) {
+        switch (calculator.getOpcode()) {
             case "+":
                 result = calculatorService.add(calculator);
                 break;
@@ -37,9 +37,7 @@ public class CalculatorController {
                 result = calculatorService.remain(calculator);
                 break;
         }
-        System.out.printf("%d %s %d = %d", calculator.getNum(),calculator.getopcode(),calculator.getNum2(),result);
-
-
+        System.out.printf("%d %s %d = %d", calculator.getNum(),calculator.getOpcode(),calculator.getNum2(),result);
     }
     public void sequence(){
         System.out.println("수열의 시작값");
@@ -50,8 +48,5 @@ public class CalculatorController {
         for (int i = 0; i < arr.length;i++){
             System.out.println(arr[i] + "\t");
         }
-
-
     }
-
 }

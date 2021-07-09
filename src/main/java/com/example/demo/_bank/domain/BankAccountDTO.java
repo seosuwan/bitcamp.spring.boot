@@ -1,6 +1,6 @@
 package com.example.demo._bank.domain;
 
-public class BankAccount {
+public class BankAccountDTO {
     private int balance;
     private String accNumber;
     private int amount;

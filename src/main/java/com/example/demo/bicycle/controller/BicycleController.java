@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 //gear compay speed
 public class BicycleController {
-    public static void main(String[] args) {
+    public void BicycleController() {
         Scanner bc = new Scanner(System.in);
         Bicycle aa = new Bicycle();
 
@@ -18,8 +18,6 @@ public class BicycleController {
         aa.setGear(bc.nextInt());
 
         System.out.print(aa.toString());
-
-
     }
 
 }

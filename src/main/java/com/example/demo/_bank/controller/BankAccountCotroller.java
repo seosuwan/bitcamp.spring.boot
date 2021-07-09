@@ -1,13 +1,14 @@
 package com.example.demo._bank.controller;
 
-import com.example.demo._bank.domain.BankAccount;
+import com.example.demo._bank.domain.BankAccountDTO;
 
 import java.util.Scanner;
 
-public class BankAccountDTO {
-    public  static  void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
-        BankAccount bankaccount = new BankAccount();
+public class BankAccountCotroller {
+
+    public void BankAccountCotroller(){
+    Scanner scanner = new Scanner(System.in);
+    BankAccountDTO bankaccount = new BankAccountDTO();
 
         System.out.println("주민번호");
         bankaccount.setAccNumber(scanner.next());
@@ -17,6 +18,5 @@ public class BankAccountDTO {
         bankaccount.deposit(bankaccount.getAmount());
 
         System.out.println(bankaccount.toString());
-    }
 }
-
+}

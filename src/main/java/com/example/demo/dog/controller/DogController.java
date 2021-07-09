@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 //state(name, color, breed, hugry) and behavior (barking, fetching,wagging tail)
 public class DogController {
-    public static void main(String[] args) {  //
-        Scanner sc = new Scanner(System.in);
-        DogDTO dog = new DogDTO();
+    Scanner sc = new Scanner(System.in);
+    DogDTO dog = new DogDTO();
 
+    public void DogCotroller() {
         System.out.println("내 이름은");
         dog.setName(sc.next());
 
@@ -24,7 +24,7 @@ public class DogController {
 
 
         System.out.print(dog.toString());
-
     }
+
 
 }

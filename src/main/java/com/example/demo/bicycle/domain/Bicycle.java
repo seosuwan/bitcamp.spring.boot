@@ -26,6 +26,6 @@ public class Bicycle {
 
     @Override
     public String toString() {
-        return String.format("바이크회사는 %s 스피드는 %d 기어는 %d",getCompany(), getSpeed(), getGear());
+        return String.format("바이크회사는 %s 스피드는 %d 기어는 %d단입니다",getCompany(), getSpeed(), getGear());
     }
 }

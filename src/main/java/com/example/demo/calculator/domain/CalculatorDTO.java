@@ -5,6 +5,7 @@ public class CalculatorDTO { //속성
     private int num2;
     private String opcode;
 
+
     public void setNum(int num) {
         this.num = num;
     }
@@ -25,12 +26,8 @@ public class CalculatorDTO { //속성
         this.opcode = opcode;
     }
 
-    public String getopcode() {
+    public String getOpcode() {
         return opcode;
     }
 
-    @Override
-    public String toString() {
-    return String.format("%d %s %d = ", num ,opcode, num2);
-    }
 }
