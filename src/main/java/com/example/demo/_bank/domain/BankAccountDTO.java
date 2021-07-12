@@ -1,43 +1,15 @@
 package com.example.demo._bank.domain;
 
-public class BankAccountDTO {
-    private int balance;
-    private String accNumber;
-    private int amount;
+import lombok.Data;
+
+@Data
+public class BankAccountDTO {  //상수와 변수
+    private int money; //이름
+    private String name; //잔액
+    private String accountNumber;//계좌
+    public static final String BANK_NAME = "비트은행"; //은행이름
+    private String date; //날짜
+    private float interest; //이자율
 
 
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
-
-    public int getBalance() {
-        return balance;
-    }
-
-    public void setAccNumber(String accNumber) {
-        this.accNumber = accNumber;
-    }
-
-    public String getAccNumberr() {
-        return accNumber;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public int deposit(int amount) {
-        balance += amount;
-        return balance;
-
-    }
-
-    @Override
-    public String toString() {
-        return String.format("주민번호 %s 입금되었습니다 %d 현재잔액은 %d", accNumber, balance, balance);
-    }
 }

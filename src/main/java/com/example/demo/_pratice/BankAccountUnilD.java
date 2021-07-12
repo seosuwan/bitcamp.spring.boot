@@ -1,4 +1,4 @@
-package com.example.demo._bank;
+package com.example.demo._pratice;
 
 class BankAccountId {
     String accnumber;

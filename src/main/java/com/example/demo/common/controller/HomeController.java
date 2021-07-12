@@ -12,16 +12,16 @@ public class HomeController {
         Scanner scanner = new Scanner(System.in);
         CalculatorController calculatorController = new CalculatorController();
         DogController dogController = new DogController();
-        BankAccountCotroller bankAccountCotroller = new BankAccountCotroller();
+        //BankAccountCotroller bankAccountCotroller = new BankAccountCotroller();
         BicycleController bicycleController = new BicycleController();
         while (true){
-            System.out.println("\n[메뉴] 0.종료 1.계산기 2.수열 3.강아지 4.은행 5.바이크" );
+            System.out.println("\n[메뉴] 0.종료 1.계산기 2.수열 3.강아지 4.은행 5.자전거 6 오늘날짜" );
             switch (scanner.next()){
                 case "0" : return;
                 case "1" :calculatorController.calculate();break;
                 case "2" :calculatorController.sequence();break;
                 case "3" :dogController.DogCotroller();break;
-                case "4" :bankAccountCotroller.BankAccountCotroller();break;
+                //case "4" :bankAccountCotroller.BankAccountCotroller();break;
                 case "5" :bicycleController.BicycleController();break;
 
 

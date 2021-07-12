@@ -4,19 +4,19 @@ import com.example.demo._bank.domain.BankAccountDTO;
 
 import java.util.Scanner;
 
-public class BankAccountCotroller {
+public class BankAccountController {
 
-    public void BankAccountCotroller(){
+    public void BankAccountController(){
     Scanner scanner = new Scanner(System.in);
     BankAccountDTO bankaccount = new BankAccountDTO();
 
-        System.out.println("주민번호");
+        /*System.out.println("주민번호");
         bankaccount.setAccNumber(scanner.next());
         System.out.println("입금하세요");
         bankaccount.setAmount(scanner.nextInt());
         System.out.println("");
         bankaccount.deposit(bankaccount.getAmount());
 
-        System.out.println(bankaccount.toString());
+        System.out.println(bankaccount.toString());*/
 }
 }

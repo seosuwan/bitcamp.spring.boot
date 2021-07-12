@@ -1,35 +1,15 @@
 package com.example.demo.dog.domain;
 
+import lombok.Data;
+
+@Data //디폴트처리 lombok
 public class DogDTO {
     private String name;
     private String color;
     private String breed;
     private String hungry;
 
-    public void setName(String name){  //Conaumer
-        this.name = name;
-    }
-    public String getName(){    //Supplier
-        return name;
-    }
-    public void setColor(String color){
-        this.color = color;
-    }
-    public String getColor(){
-        return this.color;
-    }
-    public void setBreed(String breed){
-        this.breed = breed;
-    }
-    public String getBreed(){
-        return this.breed;
-    }
-    public void setHungry(String hungry){
-        this.hungry = hungry;
-    }
-    public String getHungry(){
-        return this.hungry;
-    }
+
 
     @Override
     public String toString() {

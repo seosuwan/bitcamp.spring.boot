@@ -1,6 +1,6 @@
 package com.example.demo.bicycle.domain;
 
-public class Bicycle {
+public class BicycleDTO {
     private String company;  //멤버변수가 메인으로 가면 인스턴스 변수
     private int gear;
     private int speed;
