@@ -10,35 +10,36 @@ public class BankAccountServiceImpl implements BankAccountService {
 
 
     @Override
-    public void createAccount(BankAccountDTO bank){
-        bankAccount = new BankAccountDTO();
+    public void createAccount(BankAccountDTO bankAccount){
+        this.bankAccount = new BankAccountDTO();
         this.rand = new Random();
-        String rand
+        bankAccount.setAccountNumber(String.format("%s-%s-%s",rand.nextInt(10000),
+                rand.nextInt(10000),rand.nextInt(10000)));
 
         //bankAccount.setAccountNumber(randomNumber);
         //bankAccount.setName(bank.getName());
     }
 
     @Override
-    public int findBlance(BankAccountDTO bank) {
+    public int findBlance(BankAccountDTO bankAccount) {
         return bankAccount.getMoney();
     }
 
     @Override
-    public int deposit(BankAccountDTO bank) {
+    public int deposit(BankAccountDTO bankAccount) {
         int restMoney = bankAccount.getMoney();
-        bankAccount.setMoney(restMoney + bank.getMoney());
+        bankAccount.setMoney(restMoney + bankAccount.getMoney());
         return bankAccount.getMoney();
     }
 
     @Override
-    public int withdraw(BankAccountDTO bank) {
+    public int withdraw(BankAccountDTO bankAccount) {
 
         return 0;
     }
 
     @Override
-    public void dropAccount(BankAccountDTO bank) {
+    public void dropAccount(BankAccountDTO bankAccount) {
 
     }
 }

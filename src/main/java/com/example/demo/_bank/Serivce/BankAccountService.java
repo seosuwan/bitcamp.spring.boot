@@ -11,11 +11,11 @@ package com.example.demo._bank.Serivce;
 import com.example.demo._bank.domain.BankAccountDTO;
 
 public interface BankAccountService {
-   void createAccount(BankAccountDTO bank);
-   int findBlance(BankAccountDTO bank);
-   int deposit(BankAccountDTO bank);
-   int withdraw(BankAccountDTO bank);
-   void dropAccount(BankAccountDTO bank);
+   void createAccount(BankAccountDTO bankAccount);
+   int findBlance(BankAccountDTO bankAccount);
+   int deposit(BankAccountDTO bankAccount);
+   int withdraw(BankAccountDTO bankAccount);
+   void dropAccount(BankAccountDTO bankAccount);
 
 
 }

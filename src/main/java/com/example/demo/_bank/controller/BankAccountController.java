@@ -25,6 +25,7 @@ public class BankAccountController {
                     System.out.println("이름을 입력하세요");
                     bankAccount.setName(scanner.next());
                     this.bankAccountService.createAccount(bankAccount);
+                    System.out.println(bankAccount.getAccountNumber());
                     break;
                 case "2" :
                     System.out.println("계좌번호 입력하세요");
