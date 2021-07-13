@@ -1,7 +1,32 @@
 package com.example.demo.bicycle.service;
 
-public class BicycleServiceImpl implements BicycleService{
+import com.example.demo.bicycle.domain.BicycleDTO;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class BicycleServiceImpl implements BicycleService{
+    private BicycleDTO bicycle;
+    private ArrayList<BicycleDTO>bikes;
+
+    public BicycleServiceImpl(){
+        bicycle = new BicycleDTO();
+        bikes = new ArrayList<>();
+    }
+    @Override
+    public void add(BicycleDTO bicycle) {
+        bikes.add(bicycle);
+    }
+
+    @Override
+    public int count() {
+        return bikes.size();
+    }
+
+    @Override
+    public List<BicycleDTO> show() {
+        return bikes;
+    }
 
     @Override
     public String changingGear(String gear) {

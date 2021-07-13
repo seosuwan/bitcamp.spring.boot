@@ -3,37 +3,39 @@ package com.example.demo.dog.controller;
 import com.example.demo.dog.domain.DogDTO;
 import com.example.demo.dog.service.DogService;
 import com.example.demo.dog.service.DogServiceImpl;
+import lombok.RequiredArgsConstructor;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+
 
 //state(name, color, breed, hugry) and behavior (barking, fetching,wagging tail)
 public class DogController {
-    private DogService dogService;
-    private DogDTO dog;
-    private Scanner sc;
+    private  DogService dogService;
     public DogController(){
-        this.dogService = new DogServiceImpl();
-        this.dog = new DogDTO();
-        this.sc = new Scanner(System.in);
+        dogService = new DogServiceImpl();
+    }
+
+    public void add(DogDTO dog){
+        dogService.add(dog);
     }
 
 
-    public void DogCotroller() {
-        System.out.println("내 이름은");
-        dog.setName(sc.next());
-
-        System.out.println("내 털 색깔은");
-        dog.setColor(sc.next());
-
-        System.out.println("나의 품종은");
-        dog.setBreed(sc.next());
-
-        System.out.println("나는 지금 배가");
-        dog.setHungry(sc.next());
-
-
-        System.out.print(dog.toString());
+    public int count() {
+        return dogService.count();
     }
 
+    public void show(){
+        System.out.println("강아지의 수"+dogService.count());
+        System.out.println(dogService.show());
+    }
+    public String barking(String bark) {
+        return dogService.barking(bark);
+    }
+    public String fetching(String target) {
+        return dogService.fetching(target);
+    }
+    public String waggingTail() {
+        return dogService.waggingTail();
+    }
 
 }

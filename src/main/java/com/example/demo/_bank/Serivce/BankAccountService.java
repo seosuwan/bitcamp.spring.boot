@@ -10,7 +10,13 @@ package com.example.demo._bank.Serivce;
 
 import com.example.demo._bank.domain.BankAccountDTO;
 
+import java.util.List;
+
 public interface BankAccountService {
+   void add(BankAccountDTO bank);
+   int count();
+   List<BankAccountDTO>show();
+
    void createAccount(BankAccountDTO bankAccount);
    int findBlance(BankAccountDTO bankAccount);
    int deposit(BankAccountDTO bankAccount);

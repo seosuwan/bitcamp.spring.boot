@@ -1,13 +1,39 @@
 package com.example.demo._bank.Serivce;
 
 import com.example.demo._bank.domain.BankAccountDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class BankAccountServiceImpl implements BankAccountService {
-    private BankAccountDTO bankAccount;
-    private Random rand;
+     private BankAccountDTO bankAccount;
+     private Random rand;
+     private ArrayList<BankAccountDTO>banks;
 
+     public BankAccountServiceImpl(){
+         bankAccount = new BankAccountDTO();
+         rand = new Random();
+         banks = new ArrayList<>();
+     }
+
+
+    @Override
+    public void add(BankAccountDTO bank) {
+         banks.add(bank);
+
+    }
+
+    @Override
+    public int count() {
+        return banks.size();
+     }
+
+    @Override
+    public List<BankAccountDTO> show() {
+        return banks;
+    }
 
     @Override
     public void createAccount(BankAccountDTO bankAccount){
@@ -27,15 +53,14 @@ public class BankAccountServiceImpl implements BankAccountService {
 
     @Override
     public int deposit(BankAccountDTO bankAccount) {
-        int restMoney = bankAccount.getMoney();
-        bankAccount.setMoney(restMoney + bankAccount.getMoney());
-        return bankAccount.getMoney();
-    }
+         bankAccount.setBalance(bankAccount.getMoney()+bankAccount.getBalance());
+         return bankAccount.getBalance();
+     }
 
     @Override
     public int withdraw(BankAccountDTO bankAccount) {
-
-        return 0;
+         bankAccount.setBalance(bankAccount.getBalance()-bankAccount.getMoney());
+         return bankAccount.getBalance();
     }
 
     @Override
