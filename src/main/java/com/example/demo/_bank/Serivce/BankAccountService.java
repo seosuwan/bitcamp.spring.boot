@@ -15,7 +15,8 @@ import java.util.List;
 public interface BankAccountService {
    void add(BankAccountDTO bank);
    int count();
-   List<BankAccountDTO>show();
+   List<?>show();
+   String[] findAllAccountNumbers();
 
    void createAccount(BankAccountDTO bankAccount);
    int findBlance(BankAccountDTO bankAccount);

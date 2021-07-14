@@ -1,21 +1,20 @@
 package com.example.demo._bank.Serivce;
 
 import com.example.demo._bank.domain.BankAccountDTO;
-import org.springframework.beans.factory.annotation.Autowired;
-
+import com.example.demo.util.serivce.UtilSerivceImpl;
+import com.example.demo.util.serivce.UtilService;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class BankAccountServiceImpl implements BankAccountService {
      private BankAccountDTO bankAccount;
-     private Random rand;
-     private ArrayList<BankAccountDTO>banks;
+     private List<BankAccountDTO>banks;
+     private UtilService util;
 
      public BankAccountServiceImpl(){
          bankAccount = new BankAccountDTO();
-         rand = new Random();
          banks = new ArrayList<>();
+         util = new UtilSerivceImpl();
      }
 
 
@@ -36,11 +35,29 @@ public class BankAccountServiceImpl implements BankAccountService {
     }
 
     @Override
+    public String[] findAllAccountNumbers() {
+         String[] accountNumbers = new String[count()];
+         for (int i = 0; i < count();i++ ){
+             accountNumbers[i] += banks.get(i).getAccountNumber();
+         }
+         return accountNumbers;
+    }
+
+    @Override
     public void createAccount(BankAccountDTO bankAccount){
-        this.bankAccount = new BankAccountDTO();
-        this.rand = new Random();
-        bankAccount.setAccountNumber(String.format("%s-%s-%s",rand.nextInt(10000),
-                rand.nextInt(10000),rand.nextInt(10000)));
+        UtilService utilService = new UtilSerivceImpl();
+        String accountNumber =
+                utilService.randoNumbers(4,false)+"-"+
+                utilService.randoNumbers(4,true)+"-"+
+                utilService.randoNumbers(4,true);
+                bankAccount.setAccountNumber(accountNumber);
+        bankAccount.setAccountNumber(accountNumber);
+        banks.add(bankAccount);
+
+
+
+
+
 
         //bankAccount.setAccountNumber(randomNumber);
         //bankAccount.setName(bank.getName());

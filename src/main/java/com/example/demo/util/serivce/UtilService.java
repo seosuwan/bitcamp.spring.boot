@@ -9,5 +9,6 @@ public interface UtilService {
     LocalDate today();
     LocalTime currentTime();
     public String todayTime();
+    String randoNumbers(int digits,boolean allowZeroValue);
 
 }

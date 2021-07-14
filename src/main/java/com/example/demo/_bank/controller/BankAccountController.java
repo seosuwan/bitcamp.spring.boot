@@ -7,14 +7,16 @@ import com.example.demo._bank.domain.BankAccountDTO;
 import java.util.List;
 import java.util.Scanner;
 
-public class BankAccountController {
+public class BankAccountController  {
     private BankAccountService bankAccountService;
     private BankAccountDTO bankAccount;
 
     public BankAccountController(){
-    this.bankAccountService = new BankAccountServiceImpl();
-    this.bankAccount = new BankAccountDTO();
+        this.bankAccountService = new BankAccountServiceImpl();
+        this.bankAccount = new BankAccountDTO();
     }
+
+
 
 
     public void add(BankAccountDTO bank) {
@@ -28,8 +30,13 @@ public class BankAccountController {
 
 
     public void show() {
-        System.out.println("고객의 수"+ bankAccountService.count());
+        System.out.println("[고객 명단]" + bankAccountService.count());
         System.out.println(bankAccountService.show());
+    }
+
+
+    public String[] findAllAccountNumbers() {
+       return bankAccountService.findAllAccountNumbers();
     }
 
 

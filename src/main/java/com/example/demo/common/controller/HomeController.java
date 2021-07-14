@@ -60,7 +60,7 @@ public class HomeController {
                     BankAccountDTO bankAccount = new BankAccountDTO();
                     while (true) {
 
-                        System.out.println("[메뉴] 0.종료 1.계좌만들기 2.잔액확인 3.입금 4.출금 5.고객 수");
+                        System.out.println("[메뉴] 0.종료 1.계좌만들기 2.잔액확인 3.입금 4.출금 5.고객 명단");
 
                         switch (scanner.next()) {
                             case "0":
@@ -69,7 +69,7 @@ public class HomeController {
                                 System.out.println("이름을 입력하세요");
                                 bankAccount.setName(scanner.next());
                                 bankAccountController.createAccount(bankAccount);
-                                System.out.println(bankAccount.getAccountNumber());
+                                System.out.println(bankAccount.getName()+":\t" + bankAccount.getAccountNumber());
                                 break;
                             case "2":
                                 System.out.println("계좌번호 입력하세요");
@@ -84,16 +84,14 @@ public class HomeController {
 
                                 break;
                             case "4":
-                                System.out.println("찾을 금액을 입력하세요");
+                                System.out.println("출금할 금액을 입력하세요");
                                 bankAccount.setMoney(scanner.nextInt());
                                 bankAccountController.withdraw(bankAccount);
                                 System.out.println(bankAccount.getBalance());
                                 break;
                             case "5":
                                 bankAccountController.show();
-
-
-
+                                break;
 
                         }
                     }

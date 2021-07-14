@@ -11,6 +11,14 @@ public class BankAccountDTO {  //상수와 변수
     private String date; //날짜
     private float interest; //이자율
     private int balance;
+    private int add;
 
-
+    public String toString(){
+        return BANK_NAME + " : "+
+                "예금주 =" + name + '\''+
+                ", 계좌번호 = " + accountNumber + '\'' +
+                ",잔고 = " + balance +
+                ", 거래일자 = " + date + '\'' +
+                ",이자율 = " + interest + "\n";
+    }
 }
