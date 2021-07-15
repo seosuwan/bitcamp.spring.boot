@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BicycleServiceImpl implements BicycleService{
-    private BicycleDTO bicycle;
-    private ArrayList<BicycleDTO>bikes;
+    private final BicycleDTO bicycle;
+    private final List<BicycleDTO>bikes;
 
     public BicycleServiceImpl(){
         bicycle = new BicycleDTO();

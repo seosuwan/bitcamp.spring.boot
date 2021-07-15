@@ -9,19 +9,18 @@ package com.example.demo._bank.Serivce;
  */
 
 import com.example.demo._bank.domain.BankAccountDTO;
-
+import lombok.Data;
 import java.util.List;
 
 public interface BankAccountService {
    void add(BankAccountDTO bank);
-   int count();
-   List<?>show();
+   String count();
+   List<? extends BankAccountDTO>findAll();
    String[] findAllAccountNumbers();
-
    void createAccount(BankAccountDTO bankAccount);
-   int findBlance(BankAccountDTO bankAccount);
-   int deposit(BankAccountDTO bankAccount);
-   int withdraw(BankAccountDTO bankAccount);
+   String findBlance(BankAccountDTO bankAccount);
+   String deposit(BankAccountDTO bankAccount);
+   String withdraw(BankAccountDTO bankAccount);
    void dropAccount(BankAccountDTO bankAccount);
 
 

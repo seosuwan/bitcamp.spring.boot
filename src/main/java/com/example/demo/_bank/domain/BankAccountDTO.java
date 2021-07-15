@@ -5,13 +5,13 @@ import lombok.Data;
 @Data
 public class BankAccountDTO {  //상수와 변수
     public static final String BANK_NAME = "비트은행"; //은행이름
-    private int money; //잔액
+    private String money; //잔액
     private String name; //이름
     private String accountNumber;//계좌
     private String date; //날짜
-    private float interest; //이자율
-    private int balance;
-    private int add;
+    private String interest; //이자율
+    private String balance;
+    private String add;
 
     public String toString(){
         return BANK_NAME + " : "+
@@ -21,4 +21,5 @@ public class BankAccountDTO {  //상수와 변수
                 ", 거래일자 = " + date + '\'' +
                 ",이자율 = " + interest + "\n";
     }
+
 }

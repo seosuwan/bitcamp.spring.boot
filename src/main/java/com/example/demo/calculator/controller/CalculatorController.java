@@ -3,22 +3,35 @@ package com.example.demo.calculator.controller;
 import com.example.demo.calculator.domain.CalculatorDTO;
 import com.example.demo.calculator.service.CalculatorService;
 import com.example.demo.calculator.service.CalculatorServiceImpl;
+import com.example.demo.util.serivce.LambdaUtils;
 
 import java.util.Scanner;
 
-public class CalculatorController {
-    Scanner scanner = new Scanner(System.in);
-    CalculatorDTO calculator = new CalculatorDTO();
-    CalculatorService calculatorService = new CalculatorServiceImpl(); //인스턴스를 만드세요 = 생성자를만드세요
+public class CalculatorController extends LambdaUtils {
+    private CalculatorService calculatorService;
 
-    public void calculate(){
-        System.out.println("숫자 1");
+    public CalculatorController(){
+        this.calculatorService = new CalculatorServiceImpl();
+    }
+    public void main() {
+        Scanner scanner = new Scanner(System.in);
+        while (true){
+            print.accept("\n[메뉴] 0-종료 1-계산기 2-수열 3-구구단\n");
+            switch (scanner.next()){
+                case "0":return;
+                case "1":calculate(scanner);
+                case "2":sequence(scanner);
+            }
+        }
+    }
+    public void calculate(Scanner scanner) {
+        CalculatorDTO calculator = new CalculatorDTO();
+        print.accept("숫자 1");
         calculator.setNum(scanner.nextInt());
-        System.out.println("연산자");
+        print.accept("연산자");
         calculator.setOpcode(scanner.next());
-        System.out.println("숫자 2");
+        print.accept("숫자 2");
         calculator.setNum2(scanner.nextInt());
-        //System.out.println("+");
         int result = 0;
         switch (calculator.getOpcode()) {
             case "+":
@@ -37,16 +50,22 @@ public class CalculatorController {
                 result = calculatorService.remain(calculator);
                 break;
         }
-        System.out.printf("%d %s %d = %d", calculator.getNum(),calculator.getOpcode(),calculator.getNum2(),result);
+        String s = String.format("%d %s %d = %d", calculator.getNum(), calculator.getOpcode(), calculator.getNum2(), result);
     }
-    public void sequence(){
-        System.out.println("수열의 시작값");
+    public void sequence(Scanner scanner){
+        CalculatorDTO calculator = new CalculatorDTO();
+        print.accept("수열의 시작값");
         calculator.setNum(scanner.nextInt());
-        System.out.println("수열의 마지막값");
+        print.accept("수열의 마지막값");
         calculator.setNum2(scanner.nextInt());
-        int[] arr =  calculatorService.sequence(calculator);
-        for (int i = 0; i < arr.length;i++){
-            System.out.println(arr[i] + "\t");
+        int[] arr = calculatorService.sequence(calculator);
+        for (int i = 0; i < arr.length; i++) {
+            print.accept(arr[i] + "\t");
+            }
         }
+    public void gugudan(Scanner scanner){
+
     }
 }
+
+
