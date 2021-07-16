@@ -69,15 +69,22 @@ public class BankAccountServiceImpl extends LambdaUtils implements BankAccountSe
            }
          }
      }
-
      @Override
      public void withdraw(BankAccountDTO bankAccount) {
-
-
-    }
+         BankAccountDTO bank = null;
+         for(BankAccountDTO a : banks){
+             if(a.getAccountNumber().equals(bankAccount.getAccountNumber())){
+                 int balance = strToInt.apply(a.getBalance());
+                 a.setBalance(string.apply(balance - strToInt.apply(bankAccount.getMoney())));
+                 print.accept("출금 정보" + a);
+                 break;
+             }else {
+                 print.accept("해당 계좌가 존재하지 않습니다");
+             }
+         }
+     }
 
      @Override
      public void dropAccount(BankAccountDTO bankAccount) {
-
-    }
+     }
 }
