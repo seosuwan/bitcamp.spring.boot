@@ -44,6 +44,9 @@ public class BankAccountServiceImpl extends LambdaUtils implements BankAccountSe
                 utilService.randoNumbers(4,true);
                 bankAccount.setAccountNumber(accountNumber);
         bankAccount.setAccountNumber(accountNumber);
+        bankAccount.setBalance("0");
+        bankAccount.setDate(utilService.todayAndCurrentTime());
+        bankAccount.setInterest("0.01");
         banks.add(bankAccount);
      }
 
@@ -53,16 +56,24 @@ public class BankAccountServiceImpl extends LambdaUtils implements BankAccountSe
     }
 
      @Override
-     public String deposit(BankAccountDTO bankAccount) {
-         int restMoney = strToInt.apply(bankAccount.getMoney());
-         bankAccount.setMoney(restMoney + bankAccount.getMoney());
-         return bankAccount.getMoney();
+     public void deposit(BankAccountDTO bankAccount) {
+         BankAccountDTO bank = null;
+         for (BankAccountDTO b : banks){
+           if(b.getAccountNumber().equals(bankAccount.getAccountNumber())){
+               int balance = strToInt.apply(b.getBalance());
+               b.setBalance(string.apply(balance + strToInt.apply(bankAccount.getMoney())));
+               print.accept("입금 정보" + b);
+               break;
+           }else {
+               print.accept("해당 계좌가 존재하지 않습니다");
+           }
+         }
      }
 
      @Override
-     public String withdraw(BankAccountDTO bankAccount) {
+     public void withdraw(BankAccountDTO bankAccount) {
 
-         return"";
+
     }
 
      @Override

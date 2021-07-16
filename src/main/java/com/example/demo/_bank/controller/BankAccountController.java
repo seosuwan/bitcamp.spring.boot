@@ -25,19 +25,21 @@ public class BankAccountController extends LambdaUtils {
                     return;
                 case "1":
                     bankAccount = new BankAccountDTO();
-                    print.accept("이름입력:[    ]");
+                    print.accept("이름입력:");
                     bankAccount.setName(scanner.next());
                     bankAccountService.createAccount(bankAccount);
                     break;
                 case "2":
-                    print.accept("계좌번호 :[    ]");
+                    print.accept("입금계좌번호 :");
                     bankAccount = new BankAccountDTO();
                     bankAccount.setAccountNumber(scanner.next());
                     print.accept("입금 금액:");
                     bankAccount.setMoney(scanner.next());
+                    bankAccountService.deposit(bankAccount);
+
                     break;
                 case "3":
-                    print.accept("계좌번호 :[    ]");
+                    print.accept("출금계좌번호 :");
                     bankAccount = new BankAccountDTO();
                     bankAccount.setAccountNumber(scanner.next());
                     print.accept("출금 금액:");

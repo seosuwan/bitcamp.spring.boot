@@ -11,9 +11,6 @@ public class UtilSerivceImpl implements UtilService{
     public UtilSerivceImpl(){
         this.util = new UtilDTO();
     }
-
-
-
     @Override
     public LocalDate today() {
         util.setToday(LocalDate.now());
@@ -42,4 +39,11 @@ public class UtilSerivceImpl implements UtilService{
         }
         return fitst + result;
     }
+
+    @Override
+    public String todayAndCurrentTime() {
+        return String.format("%s %s",today(),currentTime());
+    }
+
+
 }

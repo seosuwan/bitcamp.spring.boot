@@ -9,6 +9,7 @@ import com.example.demo.calculator.controller.CalculatorController;
 import com.example.demo.dog.controller.DogController;
 import com.example.demo.dog.domain.DogDTO;
 import com.example.demo.dog.service.DogServiceImpl;
+import com.example.demo.util.controller.UtilController;
 import com.example.demo.util.serivce.LambdaUtils;
 
 import java.util.Scanner;
@@ -19,16 +20,18 @@ public class HomeController extends LambdaUtils {
         DogController dogController = new DogController();
         BicycleController bicycleController = new BicycleController();
         BankAccountController bankAccountController = new BankAccountController();
+        UtilController utilController = new UtilController();
 
         while (true) {
-            print.accept("\n[메뉴] 0.종료 1.수학 2.강아지 3.자전거 4.은행 ");
+            print.accept("\n[메뉴] 0.종료 1.Util 2.수학 3.강아지 4.자전거 5.은행 \n");
             switch (scanner.next()) {
                 case "0":
                     return;
-                case "1": new CalculatorController().main();break;
-                case "2": new DogController().main();break;
-                case "3": new BicycleController().main();break;
-                case "4": new BankAccountController().main();break;
+                case "1": new UtilController().main();break;
+                case "2": new CalculatorController().main();break;
+                case "3": new DogController().main();break;
+                case "4": new BicycleController().main();break;
+                case "5": new BankAccountController().main();break;
                         }
                     }
             }

@@ -19,8 +19,8 @@ public interface BankAccountService {
    String[] findAllAccountNumbers();
    void createAccount(BankAccountDTO bankAccount);
    String findBlance(BankAccountDTO bankAccount);
-   String deposit(BankAccountDTO bankAccount);
-   String withdraw(BankAccountDTO bankAccount);
+   void deposit(BankAccountDTO bankAccount);
+   void withdraw(BankAccountDTO bankAccount);
    void dropAccount(BankAccountDTO bankAccount);
 
 
